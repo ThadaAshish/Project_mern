@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            margin:auto
+        }
+        table,tr,th,td{
+            border: 1px solid black;
+        }
+        table td{
+            text-align: center;
+        }
+        table{
+            background-color: rgb(106, 106, 214);
+        }
+        table th input{
+            background-color: rgb(31, 30, 30);
+            color: white;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                <input type="text" name="" id="display">
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="clickbutton('1')">
+                <input type="button" value="2" onclick="clickbutton('2')">
+                <input type="button" value="3" onclick="clickbutton('3')">
+                <input type="button" value="+" onclick="clickbutton('+')">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="clickbutton('4')">
+                <input type="button" value="5" onclick="clickbutton('5')">
+                <input type="button" value="6" onclick="clickbutton('6')">
+                <input type="button" value="-" onclick="clickbutton('-')">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="clickbutton('7')">
+                <input type="button" value="8" onclick="clickbutton('8')">
+                <input type="button" value="9" onclick="clickbutton('9')">
+                <input type="button" value="*" onclick="clickbutton('*')">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="C" onclick="clickclear()">
+                <input type="button" value="0" onclick="clickbutton('0')">
+                <input type="button" value="/" onclick="clickbutton('/')">
+                <input type="button" value="=" onclick="clickvalue()">
+                <input type="button" value="Back" onclick="clickback()">
+            </td>
+        </tr>
+    </table>
+    <script>
+           let display = document.getElementById("display")
+
+        function clickbutton(buttonvalue){  
+          display.value += buttonvalue
+        }
+        function clickvalue(){
+            display.value = eval(display.value)
+        }
+        function clickclear(){
+            display.value = ""
+        }
+        function clickback(){
+            display.value = display.value.slice(0,-1)
+        }
+    </script>
+</body>
+</html>
